@@ -1,0 +1,26 @@
+{
+  "name": "exercise-backend",
+  "version": "1.0.0",
+  "description": "backend data",
+  "main": "server.js",
+  "engines": {
+    "node": "12.16.1"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "client": "cd client && npm start",
+    "dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon server.js\" \"npm run client\"",
+    "heroku-postbuild": "npm run install-client && npm run build"
+  },
+  "author": "Oscar O'Neill",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.20"
+  }
+}
